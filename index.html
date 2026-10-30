@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- =====================================================
+       SEO META TAGS — Cali School System
+       ===================================================== -->
+  <title>Cali School System | Nidaamka Maamulka Dugsiga Cali</title>
+  <meta name="description" content="Cali School System — Nidaamka casriga ah ee maamulka dugsiga. Ardayda, macallimiinta, imtixaannada, imaanshaha, kharashaadka iyo ogeysiisyada hal goob. Cali School Management System Somalia.">
+  <meta name="keywords" content="cali school system, cali system school, cali school management, dugsiga cali, school management somalia, nidaamka dugsiga, cali high school, barakaat school, school system somalia, ardayda maamulka, macallimiinta somalia">
+  <meta name="author" content="Cali School System">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Somali, English">
+  <meta name="revisit-after" content="7 days">
+  <meta name="theme-color" content="#4f46e5">
+
+  <!-- Canonical URL (update with your actual Netlify URL after deploy) -->
+  <link rel="canonical" href="https://cali-school-system.netlify.app/">
+
+  <!-- =====================================================
+       OPEN GRAPH (Facebook / WhatsApp preview)
+       ===================================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cali-school-system.netlify.app/">
+  <meta property="og:title" content="Cali School System | Nidaamka Maamulka Dugsiga">
+  <meta property="og:description" content="Nidaamka casriga ah ee maamulka dugsiga Cali. Ardayda, macallimiinta, imtixaannada, imaanshaha iyo kharashaadka hal goob.">
+  <meta property="og:image" content="https://cali-school-system.netlify.app/og-image.png">
+  <meta property="og:locale" content="so_SO">
+  <meta property="og:site_name" content="Cali School System">
+
+  <!-- =====================================================
+       TWITTER CARD
+       ===================================================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cali School System | Nidaamka Maamulka Dugsiga">
+  <meta name="twitter:description" content="Nidaamka casriga ah ee maamulka dugsiga Cali Somalia.">
+
+  <!-- =====================================================
+       STRUCTURED DATA (JSON-LD) — Google Rich Results
+       ===================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Cali School System",
+    "alternateName": ["Cali System School", "Cali High School", "Dugsiga Cali"],
+    "description": "Nidaamka casriga ah ee maamulka dugsiga Cali — ardayda, macallimiinta, imtixaannada, imaanshaha iyo kharashaadka.",
+    "url": "https://cali-school-system.netlify.app/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Wadada Maka Al-Mukarama",
+      "addressLocality": "Muqdisho",
+      "addressCountry": "SO"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+252-61-500-0000",
+      "contactType": "customer service",
+      "email": "info@calischool.edu.so"
+    },
+    "applicationCategory": "School Management System",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Print Specific Styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #globalModalContent, #globalModalContent * {
+        visibility: visible;
+      }
+      #globalModal {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: transparent !important;
+        padding: 0 !important;
+      }
+      .modal-container {
+        box-shadow: none !important;
+        border: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      .modal-header, .modal-footer, #toastContainer, .sidebar, .topbar {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOAST NOTIFICATIONS CONTAINER
+       ========================================================================= -->
+  <div id="toastContainer"></div>
+
+  <!-- =========================================================================
+       AUTHENTICATION SCREEN (LOGIN & REGISTRATION)
+       ========================================================================= -->
+  <div id="authScreen">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="school-brand-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: #0f172a;">CALI SCHOOL SYSTEM</h2>
+        <p class="text-sm text-muted">Nidaamka Casriga ah ee Maamulka Dugsiga</p>
+      </div>
+
+      <!-- 3 Main Portal Selection Tabs -->
+      <div class="portal-nav-tabs">
+        <button type="button" class="portal-nav-btn active" data-portal="admin">
+          <span style="font-size: 1.25rem;">👑</span>
+          <span>Maamulka</span>
+        </button>
+        <button type="button" class="portal-nav-btn" data-portal="teacher">
+          <span style="font-size: 1.25rem;">👨‍🏫</span>
+          <span>Macallimiinta</span>
+        </button>
+        <button type="button" class="portal-nav-btn" data-portal="student">
+          <span style="font-size: 1.25rem;">👨‍🎓</span>
+          <span>Ardayda</span>
+        </button>
+      </div>
+
+      <!-- 1. ADMIN PORTAL (Login only) -->
+      <div id="adminPortalContainer">
+        <div style="text-align: center; margin-bottom: 1.25rem;">
+          <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);">Galitaanka Maamulka (Admin Login)</h3>
+          <p class="text-xs text-muted">Keliya maamulaha dugsiga ayaa xaq u leh inuu halkan ka galo</p>
+        </div>
+        <form id="adminLoginForm">
+          <div class="form-group">
+            <label class="form-label" for="adminUsername">Username ama Email *</label>
+            <input type="text" id="adminUsername" class="form-control" placeholder="Geli username-kaaga..." required autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="adminPassword">Furaha Sirta ah (Password) *</label>
+            <input type="password" id="adminPassword" class="form-control" placeholder="Geli password-kaaga..." required autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn btn-primary w-full" style="padding: 0.75rem; font-size: 0.95rem; margin-top: 0.5rem;">
+            Soo Gal Maamul ahaan &rarr;
+          </button>
+        </form>
+        <div style="margin-top: 1rem; padding: 0.75rem; background: #f8fafc; border-radius: 8px; border: 1px dashed #cbd5e1; font-size: 0.8rem; text-align: center;">
+          <div class="text-muted" style="margin-bottom: 0.35rem;">Akoonka Tijaabada: <strong>admin</strong> / <strong>admin 121212</strong></div>
+          <button type="button" class="btn btn-sm btn-secondary w-full" onclick="window.app.quickFillAndLogin('admin', 'admin 121212', 'admin')">
+            ⚡ Hal-Guji ku Gal (Super Admin Demo)
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. TEACHER PORTAL (Login + Register Toggle) -->
+      <div id="teacherPortalContainer" class="hidden">
+        <!-- Teacher Login View -->
+        <div id="teacherLoginView">
+          <div style="text-align: center; margin-bottom: 1.25rem;">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);">Galitaanka Macallimiinta (Teacher Login)</h3>
+            <p class="text-xs text-muted">Geli Teacher ID, Email ama Username iyo password-kaaga</p>
+          </div>
+          <form id="teacherLoginForm">
+            <div class="form-group">
+              <label class="form-label">Teacher ID, Email ama Username *</label>
+              <input type="text" id="teacherIdentifier" class="form-control" placeholder="Tusaale: TCH-101 ama email-kaaga..." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Furaha Sirta ah (Password) *</label>
+              <input type="password" id="teacherPassword" class="form-control" placeholder="Geli password-kaaga..." required>
+            </div>
+            <button type="submit" class="btn btn-primary w-full" style="padding: 0.75rem; font-size: 0.95rem; margin-top: 0.5rem;">
+              Soo Gal Macallin ahaan &rarr;
+            </button>
+          </form>
+          <div style="margin-top: 1rem; padding: 0.75rem; background: #f8fafc; border-radius: 8px; border: 1px dashed #cbd5e1; font-size: 0.8rem; text-align: center;">
+            <div class="text-muted" style="margin-bottom: 0.35rem;">Akoonka Tijaabada: <strong>axmed.cali</strong> / <strong>123456</strong></div>
+            <button type="button" class="btn btn-sm btn-secondary w-full" onclick="window.app.quickFillAndLogin('axmed.cali', '123456', 'teacher')">
+              ⚡ Hal-Guji ku Gal (Ustadh Axmed Demo)
+            </button>
+          </div>
+          <div class="auth-subtoggle">
+            <span>Miyaanad weli diiwaangashanayn?</span>
+            <a onclick="window.app.toggleTeacherAuthView('register')">Isku Diiwaangeli Halkan</a>
+          </div>
+        </div>
+
+        <!-- Teacher Register View -->
+        <div id="teacherRegisterView" class="hidden">
+          <div style="text-align: center; margin-bottom: 1.25rem;">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);">Diiwaangelinta Macallin Cusub (Teacher Sign Up)</h3>
+            <p class="text-xs text-muted">Buuxi xogtaada si aad u furato akoonka macallinnimo</p>
+          </div>
+          <form id="teacherRegisterForm">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 0.75rem;">
+              <div class="form-group">
+                <label class="form-label">Magaca Buuxa *</label>
+                <input type="text" name="fullName" class="form-control" placeholder="Ustadh / Ustaada..." required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Teacher ID (Xulasho)</label>
+                <input type="text" name="customId" class="form-control" placeholder="TCH-105">
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <div class="form-group">
+                <label class="form-label">Maaddada aad Dhigto *</label>
+                <input type="text" name="subject" class="form-control" placeholder="Xisaab, Saynis, Diin..." required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Jinsiga *</label>
+                <select name="gender" class="form-select">
+                  <option value="Lab (Male)">Lab (Male)</option>
+                  <option value="Dhedig (Female)">Dhedig (Female)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email-kaaga (Login ahaan) *</label>
+              <input type="email" name="email" class="form-control" placeholder="macallin@calischool.edu.so" required>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <div class="form-group">
+                <label class="form-label">Telefoonka</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+252 61 ...">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Furaha Sirta ah *</label>
+                <input type="password" name="password" class="form-control" placeholder="Password-kaaga" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-full" style="padding: 0.75rem; font-size: 0.95rem; margin-top: 0.5rem;">
+              Dhammeystir Diiwaangelinta &rarr;
+            </button>
+          </form>
+          <div class="auth-subtoggle">
+            <span>Horay ma u leedahay akoon?</span>
+            <a onclick="window.app.toggleTeacherAuthView('login')">Soo Gal Akoonkaaga</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. STUDENT PORTAL (Login + Register Toggle) -->
+      <div id="studentPortalContainer" class="hidden">
+        <!-- Student Login View -->
+        <div id="studentLoginView">
+          <div style="text-align: center; margin-bottom: 1.25rem;">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);">Galitaanka Ardayda (Student Login)</h3>
+            <p class="text-xs text-muted">Geli Student ID, Email ama Username iyo password-kaaga</p>
+          </div>
+          <form id="studentLoginForm">
+            <div class="form-group">
+              <label class="form-label">Student ID, Email ama Username *</label>
+              <input type="text" id="studentIdentifier" class="form-control" placeholder="Tusaale: STD-2001 ama email-kaaga..." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Furaha Sirta ah (Password) *</label>
+              <input type="password" id="studentPassword" class="form-control" placeholder="Geli password-kaaga..." required>
+            </div>
+            <button type="submit" class="btn btn-primary w-full" style="padding: 0.75rem; font-size: 0.95rem; margin-top: 0.5rem;">
+              Soo Gal Arday ahaan &rarr;
+            </button>
+          </form>
+          <div style="margin-top: 1rem; padding: 0.75rem; background: #f8fafc; border-radius: 8px; border: 1px dashed #cbd5e1; font-size: 0.8rem; text-align: center;">
+            <div class="text-muted" style="margin-bottom: 0.35rem;">Akoonka Tijaabada: <strong>khaalid.jaamac</strong> / <strong>123456</strong></div>
+            <button type="button" class="btn btn-sm btn-secondary w-full" onclick="window.app.quickFillAndLogin('khaalid.jaamac', '123456', 'student')">
+              ⚡ Hal-Guji ku Gal (Khaalid Jaamac Demo)
+            </button>
+          </div>
+          <div class="auth-subtoggle">
+            <span>Miyaanad weli diiwaangashanayn?</span>
+            <a onclick="window.app.toggleStudentAuthView('register')">Isku Diiwaangeli Halkan</a>
+          </div>
+        </div>
+
+        <!-- Student Register View -->
+        <div id="studentRegisterView" class="hidden">
+          <div style="text-align: center; margin-bottom: 1.25rem;">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);">Diiwaangelinta Arday Cusub (Student Sign Up)</h3>
+            <p class="text-xs text-muted">Buuxi foomka si aad u hesho aqoonsigaaga ardaynimo</p>
+          </div>
+          <form id="studentRegisterForm">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 0.75rem;">
+              <div class="form-group">
+                <label class="form-label">Magaca Buuxa *</label>
+                <input type="text" name="fullName" class="form-control" placeholder="Magacaaga iyo aabahaa..." required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Student ID (Xulasho)</label>
+                <input type="text" name="customId" class="form-control" placeholder="STD-2005">
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <div class="form-group">
+                <label class="form-label">Fasalka *</label>
+                <select name="classId" id="regStudentClassSelect" class="form-select" required>
+                  <!-- Populated dynamically -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Jinsiga *</label>
+                <select name="gender" class="form-select">
+                  <option value="Lab (Male)">Lab (Male)</option>
+                  <option value="Dhedig (Female)">Dhedig (Female)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email-kaaga (Login ahaan) *</label>
+              <input type="email" name="email" class="form-control" placeholder="arday@gmail.com" required>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <div class="form-group">
+                <label class="form-label">Telefoonka Waalidka</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+252 61 ...">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Furaha Sirta ah *</label>
+                <input type="password" name="password" class="form-control" placeholder="Password-kaaga" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success w-full" style="padding: 0.75rem; font-size: 0.95rem; margin-top: 0.5rem;">
+              Dhammeystir Diiwaangelinta &rarr;
+            </button>
+          </form>
+          <div class="auth-subtoggle">
+            <span>Horay ma u leedahay akoon?</span>
+            <a onclick="window.app.toggleStudentAuthView('login')">Soo Gal Akoonkaaga</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MAIN APPLICATION LAYOUT (AFTER LOGIN)
+       ========================================================================= -->
+  <div id="appLayout" class="hidden">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <div>
+            <span style="font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;">Cali School</span>
+            <span style="display: block; font-size: 0.65rem; color: #94a3b8; text-transform: uppercase;">Management Portal</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <div class="menu-label">Menu Guud</div>
+        
+        <a href="#dashboard" class="nav-item active" data-view="dashboard" data-roles="admin,teacher,student">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+          <span>Guudmar (Dashboard)</span>
+        </a>
+
+        <a href="#students" class="nav-item" data-view="students" data-roles="admin,teacher">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Ardayda (Students)</span>
+        </a>
+
+        <a href="#teachers" class="nav-item" data-view="teachers" data-roles="admin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+          <span>Macallimiinta (Teachers)</span>
+        </a>
+
+        <a href="#attendance" class="nav-item" data-view="attendance" data-roles="admin,teacher,student">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+          <span>Imaanshaha (Attendance)</span>
+        </a>
+
+        <a href="#exams" class="nav-item" data-view="exams" data-roles="admin,teacher,student">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>Imtixaannada & Buundooyinka</span>
+        </a>
+
+        <a href="#classes" class="nav-item" data-view="classes" data-roles="admin,teacher">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Fasallada & Maadooyinka</span>
+        </a>
+
+        <a href="#fees" class="nav-item" data-view="fees" data-roles="admin,student">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+          <span>Kharashaadka (Fees)</span>
+        </a>
+
+        <a href="#notices" class="nav-item" data-view="notices" data-roles="admin,teacher,student">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span>Ogeysiisyada (Notices)</span>
+        </a>
+
+        <div class="menu-label" data-roles="admin">System</div>
+        <a href="#settings" class="nav-item" data-view="settings" data-roles="admin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          <span>Database & Backup</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar User Footer -->
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="avatar" id="currentUserAvatar">AD</div>
+          <div style="flex: 1; min-width: 0;">
+            <p id="currentUserName" style="font-size: 0.825rem; font-weight: 600; color: white; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Admin</p>
+            <p id="currentUserRole" style="font-size: 0.7rem; color: #94a3b8;">Super Admin</p>
+          </div>
+          <button class="btn-icon" id="logoutBtn" title="Ka bax (Logout)" style="color: #ef4444;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- Sticky Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/>
+            </svg>
+          </button>
+          <div class="page-title-box">
+            <h1 id="pageTitle">Guudmar (Dashboard)</h1>
+            <p id="pageSubtitle">Dulmar guud ee xogta dugsiga</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="top-school-tag">
+            <span>🏫</span>
+            <span id="schoolNameDisplay">Dugsiga Cali</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dynamic Page Content Area -->
+      <main class="content-body" id="mainContentArea">
+        <!-- Views rendered by app.js -->
+      </main>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       GLOBAL DYNAMIC MODAL (For Add/Edit, Marks, Report Card, ID Card)
+       ========================================================================= -->
+  <div class="modal-overlay" id="globalModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="globalModalTitle">Faahfaahin</h3>
+        <button class="btn-icon" onclick="closeModal('globalModal')" style="font-size: 1.25rem;">&times;</button>
+      </div>
+      <div class="modal-body" id="globalModalContent">
+        <!-- Content inserted dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
